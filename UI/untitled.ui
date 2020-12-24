@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>579</width>
+    <height>544</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>579</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menumode">
+    <property name="title">
+     <string>mode</string>
+    </property>
+    <addaction name="actionzip"/>
+    <addaction name="actionunzip"/>
+   </widget>
+   <widget class="QMenu" name="menuarchiver">
+    <property name="title">
+     <string>archiver</string>
+    </property>
+    <addaction name="actionhuffman"/>
+    <addaction name="actionadd_zero"/>
+    <addaction name="actionariphmetical"/>
+   </widget>
+   <addaction name="menumode"/>
+   <addaction name="menuarchiver"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionzip">
+   <property name="text">
+    <string>zip</string>
+   </property>
+  </action>
+  <action name="actionunzip">
+   <property name="text">
+    <string>unzip</string>
+   </property>
+  </action>
+  <action name="actionhuffman">
+   <property name="text">
+    <string>huffman</string>
+   </property>
+  </action>
+  <action name="actionadd_zero">
+   <property name="text">
+    <string>add_zero</string>
+   </property>
+  </action>
+  <action name="actionariphmetical">
+   <property name="text">
+    <string>ariphmetical</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
