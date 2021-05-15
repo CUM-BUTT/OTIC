@@ -15,13 +15,21 @@ class FormEvents(QtWidgets.QDialog, Ui_Form):
         self.button_unzip.clicked.connect(self.UnZipPressed)
         self.pushButton_replace.pressed.connect(self.ReplacePressed)
 
+    def GetFromTo(self):
+        source, target = self.textEdit_from.toPlainText(), self.textEdit_to.toPlainText()
+        source, target = source.split(sep='\n'), target.split(sep='\n')
+        return source, target
+
     def ZipPressed(self):
-        method, source, target = \
-            self.lineEdit_method.text(), self.textEdit_from.toPlainText(), self.textEdit_to.toPlainText()
-        self.archiver.ZipFromTo(source=source, target=target, zip_method=method)
+        method = self.lineEdit_method.text()
+        source, target = self.GetFromTo()
+        for s, t in zip(source, target):
+            self.archiver.Zip(source=s, target=t, zip_method=method)
 
     def UnZipPressed(self):
-        self.archiver.UnZipFromTo(self.textEdit_from.toPlainText(), target=self.textEdit_to.toPlainText())
+        source, target = self.GetFromTo()
+        for s, t in zip(source, target):
+            self.archiver.UnZip(source=s, target=t)
 
     def ReplacePressed(self):
         source = self.textEdit_from.toPlainText()
@@ -29,7 +37,6 @@ class FormEvents(QtWidgets.QDialog, Ui_Form):
 
         self.textEdit_from.setText(target)
         self.textEdit_to.setText(source)
-
 
 
 

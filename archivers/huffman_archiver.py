@@ -4,7 +4,10 @@ import re
 import sys
 import pandas as pd
 
-class Huffman:
+from base_classes.base_archiver import Archiver
+
+
+class Huffman(Archiver):
     def ZipFromTo(self, source, target):
         text = open(source, mode='rb').read()
 
